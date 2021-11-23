@@ -1,0 +1,6 @@
+persist.sys.isUsbOtgEnabled=true
+ro.boot.dynamic_partitions=true
+ro.mediatek.platform=MT6765
+ro.sys.usb.mtp.whql.enable=0
+ro.sys.usb.storage.type=mtp
+ro.treble.enabled=true
