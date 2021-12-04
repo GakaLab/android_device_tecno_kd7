@@ -25,7 +25,7 @@ TARGET_FLATTEN_APEX := false
 TARGET_OTA_ASSERT_DEVICE				:= kd7,TECNO-KD7
 
 # For building with minimal manifest
-ALLOW_MISSING_DEPENDENCIES				:= true
+#ALLOW_MISSING_DEPENDENCIES				:= true
 
 # Architecture
 TARGET_ARCH						:= arm64
@@ -90,6 +90,8 @@ BOARD_MKBOOTIMG_ARGS					:= \
 	--board $(TARGET_BOOTLOADER_BOARD_NAME) \
 	--cmdline $(BOARD_KERNEL_CMDLINE)
 
+# VNDK
+BOARD_VNDK_VERSION					:= current
 
 # Partition
 BOARD_BOOTIMAGE_PARTITION_SIZE				:= 33554432
@@ -172,3 +174,6 @@ TW_EXCLUDE_TWRPAPP					:= true
 # Debug
 TWRP_INCLUDE_LOGCAT					:= true
 TARGET_USES_LOGD					:= true
+
+# Use the non-open-source part, if present
+-include vendor/tecno/kd7/BoardConfigVendor.mk

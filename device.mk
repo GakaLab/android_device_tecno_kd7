@@ -107,6 +107,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libshim_showlogo
 
+# Superuser
+PRODUCT_PACKAGES += \
+    su
+
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := 29
 
@@ -119,7 +123,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.fingerprint.xml
 
-PRODUCT_PROPERTY_OVERRIDES += ro.apex.updatable=true
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.apex.updatable=true \
+    ro.adb.secure=0
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=1 \
