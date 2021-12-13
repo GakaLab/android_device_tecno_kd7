@@ -17,10 +17,6 @@
 # Inherit from device
 $(call inherit-product, device/tecno/kd7/device.mk)
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
-
 # Inherit some common Lineage stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
@@ -33,19 +29,5 @@ PRODUCT_MANUFACTURER := TECNO MOBILITY
 PRODUCT_RELEASE_NAME := TECNO Spark 5 Pro
 
 # Display
-TARGET_SCREEN_WIDTH :=720
-TARGET_SCREEN_HEIGHT :=1600
-
-# Dynamic Partition
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# VNDK
-PRODUCT_TARGET_VNDK_VERSION := 29
-
-# API
-PRODUCT_SHIPPING_API_LEVEL := 29
-
-# Fastbootd
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
-    fastbootd
+TARGET_SCREEN_WIDTH := 720
+TARGET_SCREEN_HEIGHT := 1600
