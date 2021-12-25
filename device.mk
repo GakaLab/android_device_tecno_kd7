@@ -71,10 +71,18 @@ PRODUCT_GMS_CLIENTID_BASE				:= android-tecno
 
 # GSI
 BUILDING_GSI						:= true
+PRODUCT_BUILD_CACHE_IMAGE				:= false
+PRODUCT_BUILD_USERDATA_IMAGE				:= false
+PRODUCT_BUILD_VENDOR_IMAGE				:= false
+PRODUCT_BUILD_SUPER_PARTITION				:= false
+PRODUCT_BUILD_SUPER_EMPTY_IMAGE				:= false
 PRODUCT_PACKAGES					+= \
     gsi_skip_mount.cfg \
     init.gsi.rc \
     init.vndk-nodef.rc \
+    q-developer-gsi.avbpubkey \
+    r-developer-gsi.avbpubkey \
+    s-developer-gsi.avbpubkey
 
 #  handheld packages
 PRODUCT_PACKAGES					+= \
@@ -94,15 +102,21 @@ PRODUCT_PACKAGES					+= \
 PRODUCT_SET_DEBUGFS_RESTRICTIONS			:= false
 PRODUCT_COMPATIBLE_PROPERTY_OVERRIDE			:= true
 PRODUCT_PROPERTY_OVERRIDES				+= \
-    ro.apex.updatable=true \
-    ro.adb.secure=0
+    ro.apex.updatable=true
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES			+= \
     camera.disable_zsl_mode=1 \
     ro.logd.kernel=true \
     ro.oem_unlock_supported=1 \
     ro.sf.lcd_density=320 \
     ro.vendor.pnpmgr.support=1 \
-    ro.vendor.rc=/vendor/etc/init/hw/
+    ro.vendor.rc=/vendor/etc/init/hw/ \
+    ro.adb.secure=0
+PRODUCT_SYSTEM_PROPERTIES				+= \
+    persist.sys.isUsbOtgEnabled=true \
+    ro.boot.dynamic_partitions=true \
+    ro.mediatek.platform=MT6765 \
+    ro.sys.usb.mtp.whql.enable=0 \
+    ro.sys.usb.storage.type=mtp
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS					+= $(LOCAL_PATH)/overlay

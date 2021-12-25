@@ -60,4 +60,8 @@
             <instance>SIM2</instance>
         </interface>
     </hal>
+    <hal override="true" format="aidl">
+        <name>android.system.keystore2</name>
+        <fqname>IKeystoreService/default</fqname>
+    </hal>
 </manifest>
