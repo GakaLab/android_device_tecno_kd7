@@ -25,8 +25,8 @@ TARGET_FLATTEN_APEX					:= false
 TARGET_OTA_ASSERT_DEVICE				:= kd7,TECNO-KD7
 
 # For building with minimal manifest
-# ALLOW_MISSING_DEPENDENCIES				:= true
-# BUILD_BROKEN_MISSING_REQUIRED_MODULES			:= true#
+ALLOW_MISSING_DEPENDENCIES				:= true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES			:= true
 BUILD_BROKEN_DUP_RULES					:= true
 
 # Architecture
@@ -117,6 +117,8 @@ TARGET_BOARD_PLATFORM					:= mt6765
 # Manifests
 DEVICE_MANIFEST_FILE					:= $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE					:= $(DEVICE_PATH)/compatibility_matrix.xml
+PRODUCT_ENFORCE_VINTF_MANIFEST				:= true
+VINTF_ENFORCE_NO_UNUSED_HALS				:= true
 
 # Crypto
 TW_INCLUDE_CRYPTO					:= true

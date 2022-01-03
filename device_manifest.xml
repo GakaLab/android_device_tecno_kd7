@@ -65,4 +65,9 @@
         <version>1</version>
         <fqname>IKeystoreService/default</fqname>
     </hal>
+    <hal override="true" format="aidl">
+        <name>android.hardware.keymaster</name>
+        <version>4.0</version>
+        <fqname>IKeymasterDevice/default</fqname>
+    </hal>
 </manifest>
